@@ -3,7 +3,6 @@ package jets;
 public class AerialPort {
 
 		private Aircraft[] jets; //declare an array called jets (aka aircraft)
-		
 		public AerialPort() { //initialize array of jets
 			jets = new Aircraft[15];
 			jets[0] = new F16 ("F-16C", 2, 2000, 14.2);
@@ -19,21 +18,53 @@ public class AerialPort {
 				if (jet != null ) {
 					System.out.println((jet));
 				}
-			}
-				
-				
+			}	
 			System.out.println("* * * * * * * * * * * * * * * * * * * *");
 		}
 		
+		
 		public boolean addJet(Aircraft a) { // use this after allow input at AP Driver
-			
-			
-			return true;
-			
+			boolean added = false; //declare and initialize variable "added"
+			for (int i = 0; i < jets.length; i++) { //iterate over jets array
+				if (jets[i] == null) { //if iteration finds null place on array,...
+					jets[i] = a;		//Aircraft a (value from above) gets placed in that null space
+					added = true;	//then declare that "added" is true
+					break;			//this serves to ensure the for loop only runs one time 
+				}					//vice filling Aircraft a into all remaining null array slots 
+			}
+			return added;	
 		}
 
-		
+		public Aircraft fastestJet() {
+			Aircraft fastest = jets[0];
+			for (int i = 0; i < jets.length; i++) {
+				if (jets[i] != null) {
+					if (jets[i].getSpeedInMach() > fastest.getSpeedInMach()) {
+						fastest = jets[i];
+					}
+				}
 				
+			}System.out.println(fastest);
+			return fastest;
+		}
+		
+//		public Aircraft fastestJet() {
+//			double fastest = jets[0].getSpeedInMach(); //sets variable fastest to jet speed in first array slot
+//			for (int i = 0; i < jets.length; i++) { //iterate over array
+//				if (jets[i] != null) {  //says if array slot is not null
+//					if (jets[i].getSpeedInMach() > fastest) {
+//						fastest = jets[i].getSpeedInMach();
+//					}
+//				}
+//			}
+//			return fastestJet();
+//		}
+	
+		public void displaySpeed() {
+			System.out.println(jets[4].getSpeedInMach()); 
+			
+		}
+		
 	}
 
 
