@@ -25,8 +25,10 @@ public class AerialPortDriver {
 		if (menuChoice < 1 || menuChoice > 5) {
 			System.out.println("Error. Please select a number between 1 and 5");
 		}
+		}while  (menuChoice < 1 || menuChoice > 5); 
 		
 		
+		if (menuChoice >= 1 && menuChoice <= 5); 
 		
 		
 		switch (menuChoice) {
@@ -39,16 +41,16 @@ public class AerialPortDriver {
 			//view fastest jet
 			break;
 		case 3:
-			//view longest range
+			ap.longestRangeJet();
 			break;
 		case 4:
-			System.out.println("Model: ");
+			System.out.print("Model: ");
 			String model = kb.next();
-			System.out.println("Speed in MPH: "); //****need an MPH to MACH calc somewhere
+			System.out.print("Speed in MPH: "); //****need an MPH to MACH calc somewhere
 			double speed = kb.nextDouble()/767; //look at printF information
-			System.out.println("Range: ");
+			System.out.print("Range: ");
 			int range = kb.nextInt();
-			System.out.println("Price in Millions: $");
+			System.out.print("Price in Millions: $");
 			double priceInMil = kb.nextDouble();
 			
 			switch (model) {
@@ -69,46 +71,17 @@ public class AerialPortDriver {
 					break;
 			
 			}
+			ap.listAircraft();
 			break;
 		case 5:
 			System.out.println("Good-bye");
 			break; //quit
 		}
 		
-		}while  (menuChoice >= 1 && menuChoice <= 5); 
-		
-		
-		
-		
-		
 		
 		
 		
 
-		
-		
-		
-		
-		
-//		this.model = model;
-//		this.speedInMach = speedInMach;
-//		this.range = range;
-//		this.priceInMil = priceInMil;
-
-		// input new aircraft method () {
-		//
-		// }
-
-		// assign pilot to aircraft method () {
-		//
-		// }
-
-		
-//		ap.listAircraft();
-
-		// display aircraft method () {
-		//
-		// }
 
 	
 		kb.close(); //close inside very end of main method

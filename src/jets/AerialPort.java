@@ -48,6 +48,19 @@ public class AerialPort {
 			return fastest;
 		}
 		
+		public Aircraft longestRangeJet() {
+			Aircraft longestRange = jets[0];
+			for (int i = 0; i < jets.length; i++) {
+				if (jets[i] != null) {
+					if (jets[i].getRange() > longestRange.getRange()) {
+						longestRange = jets[i];
+					}
+				}
+				
+			}System.out.println(longestRange);
+			return longestRange;
+		}
+		
 //		public Aircraft fastestJet() {
 //			double fastest = jets[0].getSpeedInMach(); //sets variable fastest to jet speed in first array slot
 //			for (int i = 0; i < jets.length; i++) { //iterate over array
