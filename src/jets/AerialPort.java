@@ -61,7 +61,7 @@ public class AerialPort {
 			return longestRange;
 		}
 		
-//		public Aircraft fastestJet() {
+//		public double fastJet() {
 //			double fastest = jets[0].getSpeedInMach(); //sets variable fastest to jet speed in first array slot
 //			for (int i = 0; i < jets.length; i++) { //iterate over array
 //				if (jets[i] != null) {  //says if array slot is not null
@@ -69,8 +69,8 @@ public class AerialPort {
 //						fastest = jets[i].getSpeedInMach();
 //					}
 //				}
-//			}
-//			return fastestJet();
+//			}System.out.println(fastest);
+//			return fastest;
 //		}
 	
 		public void displaySpeed() {
