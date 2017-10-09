@@ -2,62 +2,38 @@
 
 ### Week 2 Homework for Skill Distillery
 
-Creates a fleet of jets, defining the following attributes:
+
+
+Created a fleet of jets at an Aerial Port, defining the following attributes for each:
 	Model
-	Speed (input in MPH by user / displayed in Mach)
+	Speed (input in MPH by user / displayed in Mach) 
 	Range
 	Price
-	Pilot Assigned
+	Pilot Assigned (not yet used)
+
+//NOTE: couldn't figure out how to do printf formating with .append for decimal places on SpeedInMach
 
 Includes the following classes:
+	AerialPort
+	AerialPortDriver (with the main method)
+	Aircraft (abstract)
+		F15
+		F16
+		F35
+	Pilot (not yet used)
 
 The user is met with a menu which displays
-	List fleet
-	View fastest jet
-	View jet with longest range
-	Add a jet to Fleet
-	Quit
+	1. List fleet
+	2. View fastest jet
+	3. View jet with longest range
+	4. Add a jet to Fleet
+	5. Quit
 
-List fleet prints out the model, speed, range, and price of each jet. (There must be at least 5 jets stored when the program starts).
-
-User Story #3
-
-The view fastest jet and longest range options both print out all of the information about their jets.
-
-User Story #4
-
-Quit exits the program.
-
-User Story #5
-
-A user can add custom jets to the fleet.
-
-Stretch Goals
-
-User Story #6
-
-Each jet has a pilot
-
-User Story #7
-
-Assign a random pilot to each jet that is created
-
-User Story #8
-
-Users can hire pilots
-
-User Story #9
-
-Whenever a jet's information is displayed, that jet's pilot and his/her information should also be displayed
-
-Grading
-
-This is a graded project. You are expected to have your project completed by the start of class on Monday morning.
-
-You will be given either a pass or fail based on whether your code works given all of the following test conditions:
-
-When menu option 1 is pressed all Jets in the fleet are displayed to the user.
-When menu option 2 is selected, the fastest jet from the list of Jets should be displayed to the user.
-When menu option 3 is selected, the jet with the longest range should be displayed to the user.
-When option 4 is pressed you should be prompted to enter the model, speed (in MPH), range, and price. This Jet should be added to the list of Jets so that when the user again selects menu option 1, that custom jet is included.
-Option 5 should exit the program.
+Menu is set up with switch / case where
+	case 1. calls up the listAircraft method located in the AerialPort class
+	case 2. uses the fastestJet method located in AerialPort class
+	case 3. uses the longestRange method located in the AerialPort class
+	case 4. uses the addJet method located in AerialPort class
+	case 5. is set at the end of the main so it quits program when selected.
+	
+//Note: case 4 requires user to input String model exactly--no error catching for mistyping.

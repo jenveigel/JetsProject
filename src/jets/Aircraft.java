@@ -68,12 +68,13 @@ public abstract class Aircraft {
 		StringBuilder builder = new StringBuilder();
 		builder.append(model);
 		builder.append(", Speed: Mach ");
-		builder.append(speedInMach);
+		builder.append(speedInMach); //how do you use printf format "%.1f" here???
 		builder.append(", Range: ");
 		builder.append(range + " Miles");
 		builder.append(", Price: $");
 		builder.append(priceInMil + "M");
 		return builder.toString();
+		
 	}
 	
 }

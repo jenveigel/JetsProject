@@ -20,12 +20,11 @@ public class AerialPortDriver {
 
 				menuChoice = kb.nextInt(); // takes menu choice from user
 
-				if (menuChoice < 1 || menuChoice > 5) {
+				if (! (menuChoice >= 1 && menuChoice <= 5)) {
 					System.out.println("Error. Please select a number between 1 and 5");
 				}
 
-			} while (menuChoice < 1 || menuChoice > 5);
-			// this says if user types negative #, 0, or 6+, loops back to the "do"
+			} while (! (menuChoice >= 1 && menuChoice <= 5)) ;
 
 			if (menuChoice >= 1 && menuChoice <= 5) {
 
@@ -42,43 +41,51 @@ public class AerialPortDriver {
 					ap.longestRangeJet();
 					break;
 				case 4:
-					System.out.print("Model: ");
+					System.out.print("Please type in the type of jet you'd like to add (F-15, F-16, or F-35): ");
 					String model = kb.next();
 					System.out.print("Speed in MPH: ");
-					double speed = kb.nextDouble() / 767; // look at printF information
+					double speed = (kb.nextDouble() / 767); // look at printF information
 					System.out.print("Range: ");
 					int range = kb.nextInt();
 					System.out.print("Price in Millions: $");
 					double priceInMil = kb.nextDouble();
+					System.out.println("");
 
 					switch (model) {
 					case "F-15":
 						Aircraft a = new F15(model, speed, range, priceInMil);
 						if (ap.addJet(a)) {
 							System.out.println(a + " added to Aircraft Fleet.");
+							System.out.println("");
 						} else {
 							System.out.println("Sorry, the Aerial Port is full.");
+							System.out.println("");
 						}
 						break;
 					case "F-16":
 						Aircraft b = new F16(model, speed, range, priceInMil);
 						if (ap.addJet(b)) {
 							System.out.println(b + " added to Aircraft Fleet.");
+							System.out.println("");
 						} else {
 							System.out.println("Sorry, the Aerial Port is full.");
+							System.out.println("");
 						}
 						break;
 					case "F-35":
 						Aircraft c = new F35(model, speed, range, priceInMil);
 						if (ap.addJet(c)) {
-							System.out.println(c + " added to Aircraft Fleet.");
+							System.out.println(c.getModel() + " added to Aircraft Fleet.");
+							System.out.println("");
 						} else {
 							System.out.println("Sorry, the Aerial Port is full.");
+							System.out.println("");
 						}
 						break;
 
 					}
 					ap.listAircraft();
+					System.out.println("");
 					break;
 				case 5:
 					System.out.println("Good-bye");

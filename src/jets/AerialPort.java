@@ -79,11 +79,3 @@ public class AerialPort {
 		}
 		
 	}
-
-
-//private String model;
-//private int speedInMach;  
-//private int range;
-//private int priceInMil;
-//
-//String pilotAssigned;
